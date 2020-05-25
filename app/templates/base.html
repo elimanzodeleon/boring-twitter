@@ -1,0 +1,25 @@
+<html>
+	<head>
+		{% if title %}
+		<title>{{ title }} - microblog</title>
+		{% else %}
+		<title>Boring Twitter</title>
+		{% endif %}
+	</head>
+	<body>
+		<div >boring twitter
+			<a href='{{ url_for('index') }}'>Home</a>
+			<a href='{{ url_for('login') }}'>Log in</a>
+		</div>
+		{% with messages = get_flashed_messages() %}
+			{% if messages %}
+				<ul>
+				{% for message in messages %}
+					<li>{{ message }}</li>
+				{% endfor %}
+				</ul>
+			{% endif %}
+		{% endwith %}
+		{% block content %}{% endblock %}
+	</body>
+</html>

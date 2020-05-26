@@ -1,0 +1,8 @@
+<!-- this is a sub template used for a post (seen in home + profile)-->
+
+<table>
+	<tr>
+		<td><img src='{{ post.author.avatar(36) }}'></td>
+		<td>{{ post.author.username }}: <br>{{ post.body }}</td>
+	</tr>
+</table>
